@@ -10,6 +10,7 @@
   position: relative;
   margin-left: 20px;
   color: #333;
+  border-radius: 100%;
 }
 
 .cart-status {
@@ -26,4 +27,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.cart__button:hover {
+  transform: translate(-5%, -5%);
+}
+
+.cart__button:active {
+  color: #3333337c;
 }

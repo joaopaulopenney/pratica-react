@@ -12,7 +12,7 @@ function Cart() {
   return (
     <section className={`cart ${isCartVisible ? 'cart--active' : ''}`}>
         <div className="cart-items">
-          { cartItems.map((cartItem) => <CartItem key={cartItem.id} data={cartItem} />) }
+        { cartItems.map((cartItem, index) => <CartItem key={index} data={cartItem} index1={index} />) }
         </div>
 
         <div className="cart-resume">{formatCurrency(totalPrice, 'BRL')}</div>

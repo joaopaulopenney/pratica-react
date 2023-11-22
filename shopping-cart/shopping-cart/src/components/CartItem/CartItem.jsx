@@ -5,13 +5,13 @@ import formatCurrency from '../../utils/formatCurrency';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 
-function CartItem({ data }) {
+function CartItem({ data, index1 }) {
 
     const { cartItems, setCartItems } = useContext(AppContext);
-    const { id, thumbnail, title, price } = data;
+    const { thumbnail, title, price} = data;
 
     const handleRemoveItem = () => {
-        const updatedItems = cartItems.filter((item) => item.id != id);
+        const updatedItems = cartItems.filter((item, index) => index != index1);
         setCartItems(updatedItems);
     };
 

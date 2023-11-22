@@ -57,3 +57,11 @@
 .product-card:hover .button__add-cart {
     display: flex;
 }
+
+.button__add-cart:hover {
+    transform: translate(-5%, -5%);
+}
+
+.button__add-cart:active {
+    color: #0c5dd6a4;
+}
