@@ -1,11 +1,17 @@
-import { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
+import CardBoard from './components/CardBoard/CardBoard';
+import Provider from './context/Provider';
+import Form from './components/Form/Form';
 
 function App() {
 
   return (
-    <Header />
+    <Provider>
+      <Header />
+      <CardBoard />
+      <Form />
+    </Provider>
   )
 }
 

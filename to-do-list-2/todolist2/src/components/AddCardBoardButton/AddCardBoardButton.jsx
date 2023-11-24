@@ -1,9 +1,11 @@
+// import './AddCardBoardButton.css'
 
+// const AddCardBoardButton = () => {
+//   const handleAddCardBoard = () => setCardBoards([ ...CardBoards ])
 
-const AddCardBoardButton = () => {
-  return (
-    <button type="button">+ ADICIONAR OUTRO CARDBOARD</button>
-  )
-}
+//   return (
+//     <button type="button" className='add-button' onClick={handleAddCardBoard}>+ ADICIONAR OUTRO CARDBOARD</button>
+//   )
+// }
 
-export default AddCardBoardButton;
+// export default AddCardBoardButton;
