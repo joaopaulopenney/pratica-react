@@ -9,6 +9,10 @@
     width: 40%;
 }
 
+.form-active {
+    display: block;
+}
+
 .form-title {
     margin-bottom: 30px;
 }

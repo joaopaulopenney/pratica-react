@@ -8,3 +8,44 @@
     font-size: 0.8rem;
     cursor: pointer;
 }
+
+.form-container {
+    display: block;
+    position: absolute;
+    right: 30%;
+    bottom: 35%;
+    padding: 25px;
+    border-radius: 5px;
+    background-color: white;
+    width: 40%;
+}
+
+.form-active {
+    display: block;
+}
+
+.form-title {
+    margin-bottom: 30px;
+}
+
+.input-text {
+    border: none;
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #5281be;
+    outline: none;
+    line-height: 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.input-reset, .input-submit {
+    border: none;
+    color: #5281be;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.input-submit {
+    margin-left: 20px;
+}
