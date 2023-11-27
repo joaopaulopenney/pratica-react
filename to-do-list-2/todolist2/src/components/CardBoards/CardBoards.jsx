@@ -2,7 +2,7 @@ import AddCardButton from '../AddCardButton/AddCardButton';
 import Card from '../Card/Card';
 import './CardBoards.css';
 
-const CardBoard = () => {
+const CardBoards = () => {
 
   return (
     <section className='card-board'>
@@ -13,4 +13,4 @@ const CardBoard = () => {
   );
 }
 
-export default CardBoard;
+export default CardBoards;

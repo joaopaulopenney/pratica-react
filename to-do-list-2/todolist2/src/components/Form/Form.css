@@ -1,5 +1,5 @@
 .form-container {
-    display: none;
+    display: block;
     position: absolute;
     right: 30%;
     bottom: 35%;
