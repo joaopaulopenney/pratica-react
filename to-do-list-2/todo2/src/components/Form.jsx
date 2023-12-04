@@ -2,13 +2,15 @@ import { Button, Paper, TextField } from "@mui/material";
 import { useState } from "react";
 
 const Form = ({ addTodo }) => {
-  const [text, setText] = useState(null);
-  const [id, setId] = useState(0)
+  const [text, setText] = useState("");
+  const [id, setId] = useState(0);
 
   const todoCreate = (text) => {
     const todoObj = {text: text, id: id };
     setId(id + 1);
-    addTodo(todoObj)
+    addTodo(todoObj);
+    // document.getElementById("outlined-basic").value = null;
+    setText("");
   }
 
   return (
@@ -16,6 +18,7 @@ const Form = ({ addTodo }) => {
         <div style={{ display: "flex", justifyContent: "center" }}>
             <TextField 
               id="outlined-basic" 
+              value={text}
               label="Tarefa" 
               variant="outlined" 
               onChange={(e) => setText(e.target.value)} fullWidth 
