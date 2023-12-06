@@ -1,9 +1,30 @@
-import { Paper, TextField } from "@mui/material"
+import { Button, Paper, TextField } from "@mui/material"
+import { useState } from "react";
 
-const Form = () => {
+const Form = ({ addTodo }) => {
+
+  const [text, setText] = useState("");
+  const [id, setId] = useState(0);
+
+  const todoCreate = (text) => {
+    const todoObj = {text: text, id: id};
+    setId(id + 1);
+    addTodo(todoObj);
+    setText("");
+  }
+
   return (
-    <Paper>
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+    <Paper style={{ padding: "1em" }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <TextField 
+          id="outlined-basic"
+          value={text}
+          label="Tarefa" 
+          variant="outlined"
+          onChange={(e) => setText(e.target.value)} 
+        />
+        <Button variant="text" onClick={() => todoCreate(text)}>ADD</Button>
+      </div>
     </Paper>
   );
 }
