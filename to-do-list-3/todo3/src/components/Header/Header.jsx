@@ -3,14 +3,14 @@ import './Header.css';
 
 const Header = ({ addCardBoard }) => {
 
-  const [text, setText] = useState("");
+  const [id, setId] = useState(1);
 
-  const [id, setId] = useState(0);
+  const [text, setText] = useState(`CardBoard ${id}`);
 
   const cardBoardCreate = (text) => {
     const cardBoardObj = { text: text, id: id };
     setId(id + 1);
-    setText(`CardBoard ${id}`);
+    setText(`CardBoard ${id + 1}`);
     addCardBoard(cardBoardObj);
   }
 
