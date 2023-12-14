@@ -1,35 +1,24 @@
 import { useState } from 'react';
-import Card from '../Card/Card';
 import './CardBoard.css';
+import OpenCardDialog from '../OpenCardDialog';
 
-const CardBoard = ({ cardBoard, cards, addCard }) => {
+const CardBoard = ({ cardBoard }) => {
 
-  const [id, setId] = useState(1);
+  const [openDialog, setOpenDialog] = useState(false);
 
-  const [text, setText] = useState(`item ${id}`);
+  const dialogHandler = () => {
+    setOpenDialog(!openDialog);
+  }
 
-  const cardCreate = (text) => {
-    const cardObj = { text: text, id: id };
-    setId(id + 1);
-    setText(`item ${id}`);
-    addCard(cardObj);
+  const cardCreate = () => {
+    cardBoard.items.push("item")
+    console.log(cardBoard.items)
   }
 
   return (
     <div id='cardboard'>
-        <h3>{cardBoard.text}</h3>
-        {cards.map((card) => (
-          <div key={card.id}>
-            <Card card={card} />
-          </div>
-        ))}
-        <button id={cardBoard.id} type='button' onClick={(e) => {
-          console.log(e.target.id)
-          console.log(cardBoard.id)
-          if (e.target.id == cardBoard.id) {
-            cardCreate(text)
-          }
-        }}>Add Card</button>
+        <h3>{cardBoard.title}</h3>
+        <OpenCardDialog open={openDialog} dialogHandler={dialogHandler} cardBoard={cardBoard} />
     </div>
   );
 }

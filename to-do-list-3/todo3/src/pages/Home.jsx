@@ -6,14 +6,9 @@ const Home = () => {
 
     const [cardBoards, setCardBoards] = useState([]);
 
-    const [cards, setCards] = useState([]);
-
     const addCardBoard = (cardBoard) => {
       setCardBoards([...cardBoards, cardBoard]);
-    }
-
-    const addCard = (card) => {
-      setCards([...cards, card]);
+      console.log(cardBoards);
     }
 
   return (
@@ -22,7 +17,7 @@ const Home = () => {
       <section id="cardboards-list">
         {cardBoards.map((cardBoard) => (
           <div key={cardBoard.id}>
-            <CardBoard cardBoard={cardBoard} cards={cards} addCard={addCard} />
+            <CardBoard cardBoard={cardBoard} />
           </div>
         ))}
       </section>

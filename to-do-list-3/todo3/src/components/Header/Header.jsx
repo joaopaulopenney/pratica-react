@@ -5,19 +5,19 @@ const Header = ({ addCardBoard }) => {
 
   const [id, setId] = useState(1);
 
-  const [text, setText] = useState(`CardBoard ${id}`);
+  const [title, setTitle] = useState("");
 
-  const cardBoardCreate = (text) => {
-    const cardBoardObj = { text: text, id: id };
+  const cardBoardCreate = (title) => {
+    const cardBoardObj = { title: title, id: id, items: [] };
     setId(id + 1);
-    setText(`CardBoard ${id + 1}`);
+    setTitle(`CardBoard ${id}`);
     addCardBoard(cardBoardObj);
   }
 
   return (
     <header id='header'>
         <h1>Título</h1> 
-        <button type='button' onClick={() => cardBoardCreate(text)}>Criar o CardBoard</button>
+        <button type='button' onClick={() => cardBoardCreate(title)}>Criar o CardBoard</button>
     </header>
   );
 }
