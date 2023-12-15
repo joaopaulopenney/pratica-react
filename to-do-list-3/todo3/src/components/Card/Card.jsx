@@ -1,10 +1,8 @@
 import './Card.css';
 
-const Card = ({ card }) => {
+const Card = ({ item }) => {
   return (
-    <div>
-        <p>{card.text}</p>
-    </div>
+    <p>{item.text}</p>
   );
 }
 

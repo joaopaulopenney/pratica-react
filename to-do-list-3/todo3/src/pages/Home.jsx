@@ -8,7 +8,19 @@ const Home = () => {
 
     const addCardBoard = (cardBoard) => {
       setCardBoards([...cardBoards, cardBoard]);
-      console.log(cardBoards);
+    }
+
+    const addCard = (id, text) => {
+      var cardBoardsArray = [...cardBoards];
+
+      for (let i in cardBoardsArray) {
+        if(cardBoardsArray[i].id == id) {
+        cardBoardsArray[i].items.push({text})
+        }
+      }
+
+      setCardBoards(cardBoardsArray);
+      console.log(cardBoards)
     }
 
   return (
@@ -17,7 +29,7 @@ const Home = () => {
       <section id="cardboards-list">
         {cardBoards.map((cardBoard) => (
           <div key={cardBoard.id}>
-            <CardBoard cardBoard={cardBoard} />
+            <CardBoard cardBoard={cardBoard} addCard={addCard} />
           </div>
         ))}
       </section>

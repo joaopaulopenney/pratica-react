@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './CardBoard.css';
 import OpenCardDialog from '../OpenCardDialog';
+import Card from '../Card/Card';
 
-const CardBoard = ({ cardBoard }) => {
+const CardBoard = ({ cardBoard, addCard }) => {
 
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -10,15 +11,11 @@ const CardBoard = ({ cardBoard }) => {
     setOpenDialog(!openDialog);
   }
 
-  const cardCreate = () => {
-    cardBoard.items.push("item")
-    console.log(cardBoard.items)
-  }
-
   return (
     <div id='cardboard'>
-        <h3>{cardBoard.title}</h3>
-        <OpenCardDialog open={openDialog} dialogHandler={dialogHandler} cardBoard={cardBoard} />
+      <h3>{cardBoard.title}</h3>
+      {cardBoard.items.map((item, index) => <div key={index}><Card item={item} /></div>)}
+      <OpenCardDialog open={openDialog} dialogHandler={dialogHandler} cardBoard={cardBoard} addCard={addCard} />
     </div>
   );
 }

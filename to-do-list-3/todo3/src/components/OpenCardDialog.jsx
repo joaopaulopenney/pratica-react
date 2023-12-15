@@ -7,28 +7,24 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Fragment, useState } from 'react';
 
-export default function OpenCardDialog() {
+export default function OpenCardDialog({ open, dialogHandler, cardBoard, addCard }) {
 
-  const [editedText, setEditedText] = useState("");
+  const [text, setText] = useState("");
 
-  const [open, setOpen] = useState(false);
+  const cardCreate = () => {
+    addCard(cardBoard.id, text);
+    dialogHandler();
+  }
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   return (
     <Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined" onClick={dialogHandler}>
         Open alert dialog
       </Button>
       <Dialog
         open={open}
-        onClose={handleClose}
+        onClose={dialogHandler}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
@@ -36,13 +32,11 @@ export default function OpenCardDialog() {
           {"Criar Tarefa"}
         </DialogTitle>
         <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            <TextField fullWidth onChange={(e) => setEditedText(e.target.value)} />
-          </DialogContentText>
+          <TextField fullWidth onChange={(e) => setText(e.target.value)} />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Disagree</Button>
-          <Button onClick={handleClose} autoFocus>
+          <Button onClick={dialogHandler}>Disagree</Button>
+          <Button onClick={cardCreate}>
             Agree
           </Button>
         </DialogActions>
