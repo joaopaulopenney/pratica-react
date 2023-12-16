@@ -6,6 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Fragment, useState } from 'react';
+import './OpenCardDialog.css';
 
 export default function OpenCardDialog({ open, dialogHandler, cardBoard, addCard }) {
 
@@ -19,8 +20,8 @@ export default function OpenCardDialog({ open, dialogHandler, cardBoard, addCard
 
   return (
     <Fragment>
-      <Button variant="outlined" onClick={dialogHandler}>
-        Open alert dialog
+      <Button className='cb-btn' variant="outlined" onClick={dialogHandler}>
+        + ADICIONAR OUTRO CARD
       </Button>
       <Dialog
         open={open}

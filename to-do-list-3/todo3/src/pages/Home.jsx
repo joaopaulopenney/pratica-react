@@ -4,7 +4,7 @@ import CardBoard from "../components/CardBoard/CardBoard";
 
 const Home = () => {
 
-    const [cardBoards, setCardBoards] = useState([]);
+    const [cardBoards, setCardBoards] = useState([{ title: "To do", id: 1, items: [] }, { title: "Doing", id: 2, items: [] }, { title: "Done", id: 3, items: [] }]);
 
     const addCardBoard = (cardBoard) => {
       setCardBoards([...cardBoards, cardBoard]);
@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <>
       <Header addCardBoard={addCardBoard} />
-      <section id="cardboards-list">
+      <section id="cardboards-list" style={{display: "flex"}}>
         {cardBoards.map((cardBoard) => (
           <div key={cardBoard.id}>
             <CardBoard cardBoard={cardBoard} addCard={addCard} />

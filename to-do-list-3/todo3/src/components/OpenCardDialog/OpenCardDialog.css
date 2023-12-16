@@ -1,0 +1,15 @@
+.cb-btn {
+    padding: 0;
+    border: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+.cb-btn:hover {
+    border: none;
+    background-color: transparent;
+    opacity: 0.5;
+}
+
+

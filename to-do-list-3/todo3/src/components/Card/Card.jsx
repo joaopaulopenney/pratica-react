@@ -2,7 +2,9 @@ import './Card.css';
 
 const Card = ({ item }) => {
   return (
-    <p>{item.text}</p>
+    <div className='card'>
+      <p>{item.text}</p>
+    </div>
   );
 }
 
