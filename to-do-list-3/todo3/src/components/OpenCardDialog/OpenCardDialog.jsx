@@ -1,26 +1,34 @@
+import './OpenCardDialog.css';
 import { TextField } from '@mui/material';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Fragment, useState } from 'react';
-import './OpenCardDialog.css';
 
 export default function OpenCardDialog({ open, dialogHandler, cardBoard, addCard }) {
 
   const [text, setText] = useState("");
 
   const cardCreate = () => {
-    addCard(cardBoard.id, text);
-    dialogHandler();
+    if (text != "") {
+      addCard(cardBoard.id, text);
+      dialogHandler();
+      setText("");
+    }
   }
-
 
   return (
     <Fragment>
-      <Button className='cb-btn' variant="outlined" onClick={dialogHandler}>
+      <Button sx={{
+        padding: 0,
+        border: 'none',
+        color: 'white',
+        fontWeight: 'bolder',
+        fontSize: 12,
+        marginTop: 2,
+      }} variant="outlined" onClick={dialogHandler}>
         + ADICIONAR OUTRO CARD
       </Button>
       <Dialog

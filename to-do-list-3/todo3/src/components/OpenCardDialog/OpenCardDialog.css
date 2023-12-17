@@ -1,12 +1,13 @@
-.cb-btn {
+.Button {
     padding: 0;
     border: none;
     color: white;
     font-weight: bolder;
     font-size: 12px;
+    margin-top: 30px;
 }
 
-.cb-btn:hover {
+.Button:hover {
     border: none;
     background-color: transparent;
     opacity: 0.5;

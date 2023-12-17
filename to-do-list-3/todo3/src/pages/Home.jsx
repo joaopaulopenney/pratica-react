@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../components/Header/Header";
 import CardBoard from "../components/CardBoard/CardBoard";
+import './Home.css'
 
 const Home = () => {
 
@@ -26,7 +27,7 @@ const Home = () => {
   return (
     <>
       <Header addCardBoard={addCardBoard} />
-      <section id="cardboards-list" style={{display: "flex"}}>
+      <section id="cardboards-list">
         {cardBoards.map((cardBoard) => (
           <div key={cardBoard.id}>
             <CardBoard cardBoard={cardBoard} addCard={addCard} />

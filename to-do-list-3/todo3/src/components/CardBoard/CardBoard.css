@@ -4,6 +4,7 @@
     margin: 8px;
     width: 300px;
     border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.226);
 }
 
 .cb-title {
@@ -14,5 +15,21 @@
 }
 
 .cb-text {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
+}
+
+.none {
+    display: none;
+}
+
+.blue {
+    background-color: #78C1FA;
+}
+
+.purple {
+    background-color: #8C5DCA;
+}
+
+.green {
+    background-color: #7BCC96;
 }
