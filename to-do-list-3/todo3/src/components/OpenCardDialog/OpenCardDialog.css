@@ -1,13 +1,13 @@
-.Button {
+#Button {
     padding: 0;
     border: none;
     color: white;
     font-weight: bolder;
     font-size: 12px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-.Button:hover {
+#Button:hover {
     border: none;
     background-color: transparent;
     opacity: 0.5;

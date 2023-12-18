@@ -21,14 +21,7 @@ export default function OpenCardDialog({ open, dialogHandler, cardBoard, addCard
 
   return (
     <Fragment>
-      <Button sx={{
-        padding: 0,
-        border: 'none',
-        color: 'white',
-        fontWeight: 'bolder',
-        fontSize: 12,
-        marginTop: 2,
-      }} variant="outlined" onClick={dialogHandler}>
+      <Button id='Button' variant="outlined" onClick={dialogHandler}>
         + ADICIONAR OUTRO CARD
       </Button>
       <Dialog
