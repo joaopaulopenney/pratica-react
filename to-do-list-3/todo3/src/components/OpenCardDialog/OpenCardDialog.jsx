@@ -30,16 +30,16 @@ export default function OpenCardDialog({ open, dialogHandler, cardBoard, addCard
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Criar Tarefa"}
+        <DialogTitle style={{fontWeight: "bolder"}} id="alert-dialog-title">
+          {"Texto da nota"}
         </DialogTitle>
         <DialogContent>
-          <TextField fullWidth onChange={(e) => setText(e.target.value)} />
+          <TextField fullWidth style={{width: 500}} onChange={(e) => setText(e.target.value)} />
         </DialogContent>
         <DialogActions>
-          <Button onClick={dialogHandler}>Disagree</Button>
-          <Button onClick={cardCreate}>
-            Agree
+          <Button style={{fontWeight: "bolder"}} onClick={dialogHandler}>CANCELAR</Button>
+          <Button style={{fontWeight: "bolder"}} onClick={cardCreate}>
+            CONFIRMAR
           </Button>
         </DialogActions>
       </Dialog>

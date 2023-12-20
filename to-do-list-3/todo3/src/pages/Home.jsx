@@ -47,12 +47,27 @@ const Home = () => {
       setCardBoards(cardBoardsArray);
     }
 
-    const cardBoardsDialog = () => {
+    const moveToCardBoard = (itemId, text, toItems, fromItems, id) => {
+      let cardBoardsArray = [...cardBoards];
+
+      for (let i in cardBoardsArray) {
+        if(cardBoardsArray[i].id == id) {
+          toItems.push({text})
+          fromItems.splice(itemId, 1)
+        }
+      }
+
+      setCardBoards(cardBoardsArray);
+    }
+
+    const moveCardBoardDialog = (itemId, itemText, fromItems) => {
+      return (
       cardBoards.map((cardBoard) => (
         <div key={cardBoard.id}>
-          {cardBoard.title}
+          <button type="button" className={`move-cb-btn ${cardBoard.id == 1 ? 'btn-blue' : cardBoard.id == 2 ? 'btn-purple' : cardBoard.id == 3 ? 'btn-green' : ''}`} onClick={() => moveToCardBoard(itemId, itemText, cardBoard.items, fromItems, cardBoard.id)}>{cardBoard.title}</button>
         </div>
       ))
+      )
     }
 
   return (
@@ -61,7 +76,7 @@ const Home = () => {
       <section id="cardboards-list">
         {cardBoards.map((cardBoard) => (
           <div key={cardBoard.id}>
-            <CardBoard cardBoard={cardBoard} addCard={addCard} deleteCard={deleteCard} moveCard={moveCard} cardBoardsDialog={cardBoardsDialog} />
+            <CardBoard cardBoard={cardBoard} addCard={addCard} deleteCard={deleteCard} moveCard={moveCard} moveCardBoardDialog={moveCardBoardDialog} />
           </div>
         ))}
       </section>

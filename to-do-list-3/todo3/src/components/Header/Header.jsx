@@ -5,12 +5,12 @@ const Header = ({ addCardBoard }) => {
 
   const [id, setId] = useState(4);
 
-  const [title, setTitle] = useState(`CardBoard ${id}`);
+  const [title, setTitle] = useState(`Outros ${id - 3}`);
 
   const cardBoardCreate = () => {
     const cardBoardObj = { title: title, id: id, items: [] };
     setId(id + 1);
-    setTitle(`CardBoard ${id + 1}`);
+    setTitle(`Outros ${id - 2}`);
     addCardBoard(cardBoardObj);
   }
 

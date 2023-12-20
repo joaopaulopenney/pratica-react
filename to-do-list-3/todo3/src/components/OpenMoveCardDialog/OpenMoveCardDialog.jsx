@@ -1,12 +1,11 @@
 import './OpenMoveCardDialog.css';
-import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Fragment } from 'react';
 
-export default function OpenMoveCardDialog({ open, dialogHandler, cardBoardsDialog}) {
+export default function OpenMoveCardDialog({ open, dialogHandler, moveCardBoardDialog, item, cardBoard}) {
 
   return (
     <Fragment>
@@ -16,17 +15,14 @@ export default function OpenMoveCardDialog({ open, dialogHandler, cardBoardsDial
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Abc"}
+        <DialogTitle style={{fontWeight: 'bolder'}} id="alert-dialog-title">
+          {"Mudar a posição da nota para:"}
         </DialogTitle>
-        <DialogContent>
-            {cardBoardsDialog}
+        <DialogContent className='dialog-content' fullWidth>
+          {moveCardBoardDialog(item.id, item.text, cardBoard.items)}
         </DialogContent>
         <DialogActions>
-          <Button onClick={dialogHandler}>Disagree</Button>
-          <Button onClick={dialogHandler}>
-            Agree
-          </Button>
+
         </DialogActions>
       </Dialog>
     </Fragment>
