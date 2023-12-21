@@ -23,7 +23,7 @@ const Card = ({ item, id, deleteCard, cardBoard, moveCard, moveCardBoardDialog, 
 
   return (
     <div className='card'>
-      <p className='text' onDoubleClick={dialogUpdateHandler} title="Clique duplo para editar">{item.text} <OpenUpdateCardDialog open={openUpdateDialog} dialogHandler={dialogUpdateHandler} cardBoard={cardBoard} text={item.text} id={id} editCard={editCard} /></p>
+      <p className='text' onDoubleClick={dialogUpdateHandler} title='Clique duplo para editar'>{item.text} <OpenUpdateCardDialog open={openUpdateDialog} dialogHandler={dialogUpdateHandler} cardBoard={cardBoard} text={item.text} id={id} editCard={editCard} /></p>
       <div className='icons'>
         <button type='button' className='icon' onClick={() => { 
             if (id >= 1) {

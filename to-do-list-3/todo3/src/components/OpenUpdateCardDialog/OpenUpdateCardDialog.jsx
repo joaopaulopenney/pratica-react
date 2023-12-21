@@ -12,7 +12,7 @@ export default function OpenUpdateCardDialog({ open, dialogHandler, cardBoard, t
   const [editedText, setEditedText] = useState(text);
 
   const textHandler = () => {
-      editCard(cardBoard.id, id, editedText)
+      editCard(cardBoard.id, id, editedText);
       dialogHandler();
   }
 

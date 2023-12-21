@@ -16,7 +16,7 @@ const Home = () => {
 
       for (let i in cardBoardsArray) {
         if(cardBoardsArray[i].id == id) {
-          cardBoardsArray[i].items.push({text})
+          cardBoardsArray[i].items.push({text});
         }
       }
 
@@ -28,7 +28,7 @@ const Home = () => {
 
       for (let i in cardBoardsArray) {
         if(cardBoardsArray[i].id == id) {
-          cardBoardsArray[i].items.splice(cardId, 1)
+          cardBoardsArray[i].items.splice(cardId, 1);
         }
       }
 
@@ -52,7 +52,7 @@ const Home = () => {
 
       for (let i in cardBoardsArray) {
         if(cardBoardsArray[i].id == id) {
-          cardBoardsArray[i].items[cardId].text = editedText
+          cardBoardsArray[i].items[cardId].text = editedText;
         }
       }
 
@@ -64,9 +64,9 @@ const Home = () => {
 
       for (let i in cardBoardsArray) {
         if(cardBoardsArray[i].id == id) {
-          toItems.push({text})
-          console.log(itemId)
-          fromItems.splice(itemId, 1)
+          toItems.push({text});
+          console.log(itemId);
+          fromItems.splice(itemId, 1);
         }
       }
 
