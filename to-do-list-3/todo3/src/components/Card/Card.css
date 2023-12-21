@@ -7,6 +7,14 @@
     font-weight: bolder;
     display: flex;
     justify-content: space-between;
+    font-size: 15px;
+}
+
+.text {
+    word-break: break-all;
+    min-width: 100px;
+    max-width: 140px;
+    user-select: none;
 }
 
 .icon {

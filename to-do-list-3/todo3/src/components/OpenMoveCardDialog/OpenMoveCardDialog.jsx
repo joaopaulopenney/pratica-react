@@ -5,7 +5,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Fragment } from 'react';
 
-export default function OpenMoveCardDialog({ open, dialogHandler, moveCardBoardDialog, item, cardBoard}) {
+export default function OpenMoveCardDialog({ open, dialogHandler, moveCardBoardDialog, item, cardBoard, id}) {
 
   return (
     <Fragment>
@@ -18,8 +18,8 @@ export default function OpenMoveCardDialog({ open, dialogHandler, moveCardBoardD
         <DialogTitle style={{fontWeight: 'bolder'}} id="alert-dialog-title">
           {"Mudar a posição da nota para:"}
         </DialogTitle>
-        <DialogContent className='dialog-content' fullWidth>
-          {moveCardBoardDialog(item.id, item.text, cardBoard.items)}
+        <DialogContent className='dialog-content' >
+          {moveCardBoardDialog(id, item.text, cardBoard.items)}
         </DialogContent>
         <DialogActions>
 

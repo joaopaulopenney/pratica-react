@@ -47,12 +47,25 @@ const Home = () => {
       setCardBoards(cardBoardsArray);
     }
 
+    const editCard = (id, cardId, editedText) => {
+      let cardBoardsArray = [...cardBoards];
+
+      for (let i in cardBoardsArray) {
+        if(cardBoardsArray[i].id == id) {
+          cardBoardsArray[i].items[cardId].text = editedText
+        }
+      }
+
+      setCardBoards(cardBoardsArray);
+    }
+
     const moveToCardBoard = (itemId, text, toItems, fromItems, id) => {
       let cardBoardsArray = [...cardBoards];
 
       for (let i in cardBoardsArray) {
         if(cardBoardsArray[i].id == id) {
           toItems.push({text})
+          console.log(itemId)
           fromItems.splice(itemId, 1)
         }
       }
@@ -76,7 +89,7 @@ const Home = () => {
       <section id="cardboards-list">
         {cardBoards.map((cardBoard) => (
           <div key={cardBoard.id}>
-            <CardBoard cardBoard={cardBoard} addCard={addCard} deleteCard={deleteCard} moveCard={moveCard} moveCardBoardDialog={moveCardBoardDialog} />
+            <CardBoard cardBoard={cardBoard} addCard={addCard} deleteCard={deleteCard} moveCard={moveCard} moveCardBoardDialog={moveCardBoardDialog} editCard={editCard} />
           </div>
         ))}
       </section>
