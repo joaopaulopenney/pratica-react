@@ -9,7 +9,7 @@ import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 import Home from './routes/Home';
 import NewPost from './routes/NewPost';
 
-const router = createBrowserRoute([
+const router = createBrowserRouter([
   {
     element: <App />,
     children: [
