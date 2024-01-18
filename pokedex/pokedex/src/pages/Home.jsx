@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 const Home = ({ setPokemonData }) => {
   const [pokemons, setPokemons] = useState([]);
 
+  const [search, setSearch] = useState("");
+
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -27,20 +29,6 @@ const Home = ({ setPokemonData }) => {
     //   .catch((err) => console.log(err));
   };
 
-  const pokemonFilter = (name) => {
-    var filteredPokemons = [];
-    if(name==="") {
-      getPokemons();
-    }
-    for (var i in pokemons) {
-      if(pokemons[i].data.name.includes(name)) {
-        filteredPokemons.push(pokemons[i]);
-      }
-    }
-    setPokemons(filteredPokemons);
-  };
-
-
   const pokemonPickHandler = (pokemonData) => {
     setPokemonData(pokemonData);
     navigate("/profile");
@@ -49,11 +37,13 @@ const Home = ({ setPokemonData }) => {
 
   return (
     <div>
-      <Navbar pokemonFilter={pokemonFilter} />
+      <Navbar search={search} setSearch={setSearch} />
         <Container maxWidth="false">
           <Grid container spacing={3}>
-            {pokemons.length === 0 ? <Skeletons /> : 
-              pokemons.map((pokemon, key) => (
+            {pokemons.length === 0 ? <Skeletons /> :
+              pokemons
+              .filter((pokemon) => pokemon.data.name.toLowerCase().startsWith(search.toLowerCase())) 
+              .map((pokemon, key) => (
                 <Grid item xs={12} sm={6} md={4} lg={2} key={key}>
                   <Box onClick={() => pokemonPickHandler(pokemon.data)}>
                     <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} types={pokemon.data.types} />

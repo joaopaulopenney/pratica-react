@@ -53,7 +53,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar({ pokemonFilter, hideSearch }) {
+export default function Navbar({ hideSearch, search, setSearch }) {
   const navigate = useNavigate();
   return (
     <Box marginBottom="2em" sx={{ flexGrow: 1 }}>
@@ -62,7 +62,7 @@ export default function Navbar({ pokemonFilter, hideSearch }) {
           <Box display="flex" justifyContent="space-between" width="100%">
             <Box component="img" src="/assets/pokemon-logo.png" height="3em" sx={{cursor: "pointer"}} onClick={() => navigate("/")} />
             {!hideSearch && (
-              <Search onChange={(e) => pokemonFilter((e.target.value).toLowerCase())}>
+              <Search value={search} onChange={(e) => setSearch((e.target.value).toLowerCase())}>
                 <SearchIconWrapper>
                   <SearchIcon />
                 </SearchIconWrapper>
