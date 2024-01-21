@@ -24,7 +24,9 @@ export default function AnimeCard({ title, image, score, genres }) {
             Score: {score}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Genres: 
+            Genres: {genres.map((genre, key) => (
+                      <span key={key} style={{display:"inline"}}>{" " + genre.name}</span>
+                    ))} 
           </Typography>
         </CardContent>
       </CardActionArea>

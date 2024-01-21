@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Box, Container, Grid } from '@mui/material';
 import AnimeCard from '../components/AnimeCard';
+import Navbar from '../components/Navbar';
 
 export const Home = () => {
 
@@ -31,13 +32,13 @@ export const Home = () => {
 
   return (
     <>
-        <div>Navbar</div>
+        <Navbar />
         <Container>
             <Grid container spacing={2}>
                 {animes.map((anime, key) => (
                     <Grid item xs={12} sm={6} md={4} lg={3} key={key}>
                         <Box>
-                            <AnimeCard title={anime.title} image={anime.images.jpg.large_image_url} score={anime.score} genres={anime.genres}  />
+                            <AnimeCard title={anime.title} image={anime.images.jpg.large_image_url} score={anime.score} genres={anime.genres} />
                         </Box>
                     </Grid>
                 ))}
