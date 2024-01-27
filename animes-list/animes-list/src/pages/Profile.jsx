@@ -1,7 +1,8 @@
 import React from 'react';
 
-export const Profile = () => {
+export const Profile = ({ animeData }) => {
+  console.log(animeData)
   return (
-    <div>Profile</div>
+    <div></div>
   )
 };

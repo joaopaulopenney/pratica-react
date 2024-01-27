@@ -64,7 +64,7 @@ export default function Navbar() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <Link style={{ color:"white", textDecoration:"none" }} to="/profile">Animes-List</Link>
+            <Link style={{ color:"white", textDecoration:"none" }} to="/" >Animes-List</Link>
           </IconButton>
           <Search>
             <SearchIconWrapper>
