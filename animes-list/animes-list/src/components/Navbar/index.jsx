@@ -52,7 +52,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar() {
+export default function Navbar({ hideSearch, search, setSearch }) {
   return (
     <Box sx={{ flexGrow: 1, marginBottom:"15px" }}>
       <AppBar position="static">
@@ -66,15 +66,16 @@ export default function Navbar() {
           >
             <Link style={{ color:"white", textDecoration:"none" }} to="/" >Animes-List</Link>
           </IconButton>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+          {!hideSearch &&
+          <Search value={search} onChange={(e) => setSearch(e.target.value)}>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search>}
         </Toolbar>
       </AppBar>
     </Box>
