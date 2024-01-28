@@ -62,7 +62,7 @@ export default function Navbar({ hideSearch, search, setSearch }) {
           <Box display="flex" justifyContent="space-between" width="100%">
             <Box component="img" src="/assets/pokemon-logo.png" height="3em" sx={{cursor: "pointer"}} onClick={() => navigate("/")} />
             {!hideSearch && (
-              <Search value={search} onChange={(e) => setSearch((e.target.value).toLowerCase())}>
+              <Search value={search} onChange={(e) => setSearch((e.target.value))}>
                 <SearchIconWrapper>
                   <SearchIcon />
                 </SearchIconWrapper>
