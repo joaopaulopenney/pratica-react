@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Navbar from '../components/Navbar';
 import { useNavigate } from 'react-router-dom';
-import { Box, Container } from '@mui/material';
+import { Box, Container, Divider } from '@mui/material';
 
 export function Profile({ animeData }) {
   const navigate = useNavigate();
@@ -25,8 +25,8 @@ export function Profile({ animeData }) {
   return (
     <>
       <Navbar hideSearch />
-      <Container sx={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", }}>
-        <Card sx={{ maxWidth: 350, minWidth: 300}}>
+      <Container sx={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
+        <Card sx={{ minWidth: "300px", maxWidth: "300px", minHeight: "500px" }}>
           <CardMedia
             component="img"
             alt={animeData.title}
@@ -52,13 +52,32 @@ export function Profile({ animeData }) {
 
           </CardActions>
         </Card>
-        <Card sx={{ maxWidth: "700px" }}>
-          <CardContent sx={{ height: "530px" }}>
-            <Typography gutterBottom variant="body2" component="div">
+        <Box sx={{ minHeight: "500px", margin: "20px", minWidth: "350px", maxWidth: "700px" }}>
+          <Typography gutterBottom variant="subtitle1" component="div">
+              Type: {animeData.type} / Duration: {animeData.duration}
+          </Typography>
+          <Typography gutterBottom variant="subtitle1" component="div">
+              Status: {animeData.status}
+          </Typography>
+          <Typography gutterBottom variant="subtitle1" component="div">
+              Members: {animeData.members}
+          </Typography>
+          <Divider />
+          <Typography marginTop={6} gutterBottom variant="body2" component="div">
               {animeData.synopsis}
-            </Typography>
-          </CardContent>
-        </Card>
+          </Typography>
+          <Divider />
+          {animeData.studios.map((studio, key) => (
+            <Box key={key} marginTop={6}>
+              <Typography gutterBottom variant="h6" component="div">
+                Studios
+              </Typography>
+              <Typography gutterBottom variant="subtitle1" component="div">
+                {studio.name}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
       </Container>
     </>
   );
