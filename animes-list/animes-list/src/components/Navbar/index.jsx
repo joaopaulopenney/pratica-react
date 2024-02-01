@@ -54,7 +54,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Navbar({ hideSearch, search, setSearch }) {
   return (
-    <Box sx={{ flexGrow: 1, marginBottom:"15px" }}>
+    <Box sx={{ flexGrow: 1, marginBottom:"15px", width: "100vw" }}>
       <AppBar position="static">
         <Toolbar sx={{ display:"flex", justifyContent:"space-between" }}>
         <IconButton
